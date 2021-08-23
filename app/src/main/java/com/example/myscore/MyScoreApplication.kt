@@ -12,6 +12,7 @@ class MyScoreApplication : Application() {
 
         startKoin {
             androidContext(this@MyScoreApplication)
+            modules(Modules.all)
         }
     }
 }
