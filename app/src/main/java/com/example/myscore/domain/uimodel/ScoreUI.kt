@@ -5,6 +5,6 @@ data class ScoreUI (
     val creditReportInfo: CreditReportInfoUI,
     val dashboardStatus: String,
     val personaType: String,
-    val coachingSummary: CoachingSummaryUI,
+    val coachingSummary: CoachingSummaryUI?,
     val augmentedCreditScore: String
 )
