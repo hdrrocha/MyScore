@@ -4,6 +4,8 @@ import com.example.myscore.BuildConfig
 import com.example.myscore.data.api.ScoreApi
 import com.example.myscore.data.repository.ScoreRepository
 import com.example.myscore.data.repository.abs.ScoreRepositoryAbs
+import com.example.myscore.domain.usecase.ScoreUseCase
+import com.example.myscore.domain.usecase.abs.ScoreUseCaseAbs
 import com.itkacher.okhttpprofiler.OkHttpProfilerInterceptor
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
@@ -52,9 +54,19 @@ object Modules {
         }
     }
 
+    private val useCase = module {
+        single<ScoreUseCaseAbs> {
+            ScoreUseCase(
+                mapper = get(),
+                repository = get()
+            )
+        }
+    }
+
     var all = listOf(
-            network,
-            api,
-            repository
+        network,
+        api,
+        repository,
+        useCase
     )
 }
