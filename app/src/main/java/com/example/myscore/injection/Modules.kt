@@ -6,11 +6,13 @@ import com.example.myscore.data.repository.ScoreRepository
 import com.example.myscore.data.repository.abs.ScoreRepositoryAbs
 import com.example.myscore.domain.usecase.ScoreUseCase
 import com.example.myscore.domain.usecase.abs.ScoreUseCaseAbs
+import com.example.myscore.domain.viewmodel.ScoreViewModel
 import com.itkacher.okhttpprofiler.OkHttpProfilerInterceptor
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Rfc3339DateJsonAdapter
 import okhttp3.OkHttpClient
+import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -63,10 +65,18 @@ object Modules {
         }
     }
 
+    private val viewModel = module {
+        viewModel {
+            ScoreViewModel(
+                useCase = get()
+            )
+        }
+    }
     var all = listOf(
         network,
         api,
         repository,
-        useCase
+        useCase,
+        viewModel
     )
 }
