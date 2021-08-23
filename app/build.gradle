@@ -32,9 +32,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        dataBinding = true
+    }
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
 }
 
 dependencies {
@@ -60,6 +64,7 @@ dependencies {
     implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
     implementation "com.squareup.okhttp3:logging-interceptor:$versions.http_logging"
     implementation "com.fasterxml.jackson.module:jackson-module-kotlin:$versions.jackson_fasterxml"
+
     // Databinding
     kapt 'com.android.databinding:compiler:3.1.4'
 

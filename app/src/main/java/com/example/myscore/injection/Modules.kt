@@ -4,6 +4,8 @@ import com.example.myscore.BuildConfig
 import com.example.myscore.data.api.ScoreApi
 import com.example.myscore.data.repository.ScoreRepository
 import com.example.myscore.data.repository.abs.ScoreRepositoryAbs
+import com.example.myscore.domain.mapper.ScoreMapper
+import com.example.myscore.domain.mapper.abs.ScoreMapperAbs
 import com.example.myscore.domain.usecase.ScoreUseCase
 import com.example.myscore.domain.usecase.abs.ScoreUseCaseAbs
 import com.example.myscore.domain.viewmodel.ScoreViewModel
@@ -55,7 +57,11 @@ object Modules {
             )
         }
     }
-
+    private val mapper = module {
+        single<ScoreMapperAbs> {
+            ScoreMapper()
+        }
+    }
     private val useCase = module {
         single<ScoreUseCaseAbs> {
             ScoreUseCase(
@@ -76,6 +82,7 @@ object Modules {
         network,
         api,
         repository,
+        mapper,
         useCase,
         viewModel
     )
