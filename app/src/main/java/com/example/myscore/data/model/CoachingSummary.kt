@@ -1,32 +1,32 @@
 package com.example.myscore.data.model
 
 class CreditReportInfo {
-    var score = 0.0
-    var scoreBand = 0.0
+    var score: Double? = null
+    var scoreBand: Double? = null
     var clientRef: String? = null
     var status: String? = null
-    var maxScoreValue = 0.0
-    var minScoreValue = 0.0
-    var monthsSinceLastDefaulted = 0.0
-    var hasEverDefaulted = false
-    var monthsSinceLastDelinquent = 0.0
-    var hasEverBeenDelinquent = false
-    var percentageCreditUsed = 0.0
-    var percentageCreditUsedDirectionFlag = 0.0
-    var changedScore = 0.0
-    var currentShortTermDebt = 0.0
-    var currentShortTermNonPromotionalDebt = 0.0
-    var currentShortTermCreditLimit = 0.0
-    var currentShortTermCreditUtilisation = 0.0
-    var changeInShortTermDebt = 0.0
-    var currentLongTermDebt = 0.0
-    var currentLongTermNonPromotionalDebt = 0.0
+    var maxScoreValue: Double? = null
+    var minScoreValue: Double? = null
+    var monthsSinceLastDefaulted: Double? = null
+    var hasEverDefaulted: Boolean? = null
+    var monthsSinceLastDelinquent: Double? = null
+    var hasEverBeenDelinquent: Boolean? = null
+    var percentageCreditUsed: Double? = null
+    var percentageCreditUsedDirectionFlag: Double? = null
+    var changedScore: Double? = null
+    var currentShortTermDebt: Double? = null
+    var currentShortTermNonPromotionalDebt: Double? = null
+    var currentShortTermCreditLimit: Double? = null
+    var currentShortTermCreditUtilisation: Double? = null
+    var changeInShortTermDebt: Double? = null
+    var currentLongTermDebt: Double? = null
+    var currentLongTermNonPromotionalDebt: Double? = null
     var currentLongTermCreditLimit: String? = null
     var currentLongTermCreditUtilisation: String? = null
-    var changeInLongTermDebt = 0.0
-    var numPositiveScoreFactors = 0.0
-    var numNegativeScoreFactors = 0.0
-    var equifaxScoreBand = 0.0
+    var changeInLongTermDebt: Double? = null
+    var numPositiveScoreFactors: Double? = null
+    var numNegativeScoreFactors: Double? = null
+    var equifaxScoreBand: Double? = null
     var equifaxScoreBandDescription: String? = null
-    var daysUntilNextReport = 0.0
+    var daysUntilNextReport: Double? = null
 }
