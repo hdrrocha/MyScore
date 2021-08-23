@@ -3,6 +3,7 @@ package com.example.myscore.domain.usecase
 import com.example.myscore.data.model.CoachingSummary
 import com.example.myscore.data.model.CreditReportInfo
 import com.example.myscore.data.model.Score
+import com.example.myscore.domain.mapper.ScoreMapper
 import com.example.myscore.domain.uimodel.CoachingSummaryUI
 import com.example.myscore.domain.uimodel.CreditReportInfoUI
 import com.example.myscore.domain.uimodel.ScoreUI

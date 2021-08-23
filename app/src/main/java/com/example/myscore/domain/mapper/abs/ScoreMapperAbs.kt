@@ -1,4 +1,4 @@
-package com.example.myscore.domain.usecase.abs
+package com.example.myscore.domain.mapper.abs
 
 import com.example.myscore.data.model.Score
 import com.example.myscore.domain.uimodel.ScoreUI
