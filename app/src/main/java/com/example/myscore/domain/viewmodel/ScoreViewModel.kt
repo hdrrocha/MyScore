@@ -15,6 +15,8 @@ class ScoreViewModel(
 
     private val error = MutableLiveData<Boolean>()
     private val loading = MutableLiveData<Boolean>()
+    val status =
+        Transformations.map(_uiScore) { it != null }
 
     val hasError get() = error as LiveData<Boolean>
     val isLoading get() = loading as LiveData<Boolean>

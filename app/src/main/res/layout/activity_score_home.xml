@@ -12,19 +12,33 @@
     android:layout_height="match_parent"
     tools:context=".ui.ScoreHomeActivity">
 
-    <com.example.myscore.ui.components.ScoreCustomComponent
-        android:id="@+id/progressScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:animateLayoutChanges="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.example.myscore.ui.components.CustomLoading
+        android:layout_width="@dimen/score_width"
+        android:layout_height="@dimen/score_height"
+        android:layout_marginTop="@dimen/spacing_xx_large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/progressScore"
+        app:loadingType="OVAL"
+        app:show="@{viewModel.isLoading}" />
+
+    <com.example.myscore.ui.components.ScoreCustomComponent
+        android:id="@+id/progressScore"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:setMaxProgress="@{viewModel.scoreLimitTotal}"
         app:setProgress="@{viewModel.scoreLimitAvailable}"
+        app:setProgressBarSubTitle="@{viewModel.scoreLimitTotalDescription}"
         app:setScoreTitle="@{viewModel.scoreLimitAvailableDescription}"
-        app:setProgressBarSubTitle="@{viewModel.scoreLimitTotalDescription}" />
+        app:show="@{!viewModel.isLoading}" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

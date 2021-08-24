@@ -1,6 +1,5 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
-
     <dimen name="spacing_none">0dp</dimen>
     <dimen name="spacing_micro">4dp</dimen>
     <dimen name="spacing_tiny">8dp</dimen>
@@ -9,4 +8,8 @@
     <dimen name="spacing_semi">32dp</dimen>
     <dimen name="spacing_large">48dp</dimen>
     <dimen name="spacing_x_large">64dp</dimen>
+    <dimen name="spacing_xx_large">100dp</dimen>
+
+    <dimen name="score_width">200dp</dimen>
+    <dimen name="score_height">200dp</dimen>
 </resources>
