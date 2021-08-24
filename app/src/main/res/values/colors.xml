@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--Neutral-->
+    <color name="neutral16">#292929</color>
+    <color name="neutral48">#757575</color>
+    <color name="neutral48Opacity">#59757575</color>
+    <color name="neutral72">#B8B8B8</color>
+    <color name="neutral88">#E0E0E0</color>
+    <color name="neutral88Opacity">#59E0E0E0</color>
+    <color name="neutral98">#FAFAFA</color>
+    <color name="neutralWhite">#FFFFFFFF</color>
+    <color name="neutralYellow">#DFD690</color>
 </resources>

@@ -12,5 +12,25 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>]
+
+    <style name="label">
+        <item name="android:textColor">@color/neutral48</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="label_smaller" parent="label">
+        <item name="android:textColor">@color/neutral16</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="label_smaller_count" parent="label">
+        <item name="android:textColor">@color/neutralYellow</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="label_bigger_count" parent="label">
+        <item name="android:textColor">@color/neutralYellow</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:gravity">center</item>
     </style>
 </resources>

@@ -18,7 +18,7 @@ class ScoreCustomComponent@JvmOverloads constructor(
         inflater.inflate(R.layout.view_score_custom_component, this, true)
     }
     fun setScoreTitle(availableLimit: String?) {
-        progress_text.text = availableLimit
+        progress_bar_count.text = availableLimit
     }
 
     fun setMaxProgress(maxProgressValue: Int?) {
