@@ -39,7 +39,20 @@
         app:setProgress="@{viewModel.scoreLimitAvailable}"
         app:setProgressBarSubTitle="@{viewModel.scoreLimitTotalDescription}"
         app:setScoreTitle="@{viewModel.scoreLimitAvailableDescription}"
-        app:show="@{!viewModel.isLoading}" />
+        app:show="@{!viewModel.isLoading}" >
+
+        <TextView
+            android:id="@+id/tvErrorMenssage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/error_message"
+            android:textAppearance="@style/label"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:show="@{viewModel.hasError}"/>
+    </com.example.myscore.ui.components.ScoreCustomComponent>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

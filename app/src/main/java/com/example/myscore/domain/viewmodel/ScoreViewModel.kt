@@ -16,12 +16,15 @@ class ScoreViewModel(
     private val error = MutableLiveData<Boolean>()
     private val loading = MutableLiveData<Boolean>()
     val status =
-        Transformations.map(_uiScore) { it != null }
+        Transformations.map(_uiScore) {
+            it != null && loading.equals(false) || it != null && hasError.equals(false)
+        }
 
     val hasError get() = error as LiveData<Boolean>
     val isLoading get() = loading as LiveData<Boolean>
 
-    val scoreLimit: LiveData<CreditReportInfoUI> = Transformations.map(_uiScore) { it.creditReportInfo }
+    val scoreLimit: LiveData<CreditReportInfoUI> =
+        Transformations.map(_uiScore) { it.creditReportInfo }
     val scoreLimitTotal: LiveData<Int?> = Transformations.map(scoreLimit) {
         it.maxScoreValue.toInt()
     }
@@ -35,10 +38,10 @@ class ScoreViewModel(
     val scoreLimitTotalDescription: LiveData<String?> = Transformations.map(scoreLimit) {
         it.maxScoreValue.toString()
     }
+
     fun loadData() = viewModelScope.launch {
         loading.value = true
         error.value = false
-
         try {
             _uiScore.value = useCase.getScore()
         } catch (e: Exception) {
