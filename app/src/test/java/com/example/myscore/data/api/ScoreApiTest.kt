@@ -4,7 +4,6 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.myscore.BaseUnitTest
 import com.example.myscore.data.model.CoachingSummary
 import com.example.myscore.data.model.CreditReportInfo
-import com.example.myscore.data.model.Score
 import com.google.common.truth.Truth
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
@@ -28,69 +27,60 @@ class GitHubApiTest : BaseUnitTest() {
     fun getScoreSuccessTest() = runBlocking {
         mockNetworkResponseWithFileContent("score200.json", HttpURLConnection.HTTP_OK)
 
-        val creditReportInfo = CreditReportInfo().apply {
-            score = 514.0
-            scoreBand = 4.0
-            clientRef = "CS-SED-655426-708782"
-            status = "MATCH"
-            maxScoreValue = 700.0
-            minScoreValue = 0.0
-            monthsSinceLastDefaulted = -1.0
-            hasEverDefaulted = false
-            monthsSinceLastDelinquent = 1.0
-            hasEverBeenDelinquent = true
-            percentageCreditUsed = 44.0
-            percentageCreditUsedDirectionFlag = 1.0
-            changedScore = 0.0
-            currentShortTermDebt = 13758.0
-            currentShortTermNonPromotionalDebt = 13758.0
-            currentShortTermCreditLimit = 30600.0
-            currentShortTermCreditUtilisation = 44.0
-            changeInShortTermDebt = 549.0
-            currentLongTermDebt = 24682.0
-            currentLongTermNonPromotionalDebt = 24682.0
-            currentLongTermCreditLimit = null
-            currentLongTermCreditUtilisation = null
-            changeInLongTermDebt = -327.0
-            numPositiveScoreFactors = 9.0
-            numNegativeScoreFactors = 0.0
-            equifaxScoreBand = 4.0
-            equifaxScoreBandDescription = "Excellent"
-            daysUntilNextReport = 9.0
-        }
-
-        val coachingSummary = CoachingSummary().apply {
-            activeTodo = false
-            activeChat = true
-            numberOfTodoItems = 0.0
-            numberOfCompletedTodoItems = 0.0
-            selected = true
-        }
-
-        val expected = Score().apply {
-            accountIDVStatus = "PASS"
-            this.creditReportInfo = creditReportInfo
-            dashboardStatus = "PASS"
-            personaType = "INEXPERIENCED"
-            this.coachingSummary = coachingSummary
-            augmentedCreditScore = null
-        }
-
         val actual = sut.getScore()
-        Truth.assertThat(actual.accountIDVStatus).isEqualTo(expected.accountIDVStatus)
-        Truth.assertThat(actual.creditReportInfo).isEqualTo(expected.creditReportInfo)
-        Truth.assertThat(actual.dashboardStatus).isEqualTo(expected.dashboardStatus)
-        Truth.assertThat(actual.personaType).isEqualTo(expected.personaType)
-        Truth.assertThat(actual.coachingSummary).isEqualTo(expected.coachingSummary)
-        Truth.assertThat(actual.augmentedCreditScore).isEqualTo(expected.augmentedCreditScore)
+        Truth.assertThat(actual.accountIDVStatus).isEqualTo("PASS")
+        testCreditReportInfo(actual.creditReportInfo)
+        Truth.assertThat(actual.dashboardStatus).isEqualTo("PASS")
+        Truth.assertThat(actual.personaType).isEqualTo("INEXPERIENCED")
+        testCoachingSummary(actual.coachingSummary)
+        Truth.assertThat(actual.augmentedCreditScore).isEqualTo(null)
+    }
+
+    private fun testCoachingSummary(coachingSummary: CoachingSummary?) {
+        Truth.assertThat(coachingSummary?.activeTodo).isEqualTo(false)
+        Truth.assertThat(coachingSummary?.activeChat).isEqualTo(true)
+        Truth.assertThat(coachingSummary?.numberOfTodoItems).isEqualTo(0.0)
+        Truth.assertThat(coachingSummary?.numberOfCompletedTodoItems).isEqualTo(0.0)
+        Truth.assertThat(coachingSummary?.selected).isEqualTo(true)
+    }
+
+    private fun testCreditReportInfo(creditReportInfo: CreditReportInfo?) {
+        Truth.assertThat(creditReportInfo?.score).isEqualTo(514.0)
+        Truth.assertThat(creditReportInfo?.scoreBand).isEqualTo(4.0)
+        Truth.assertThat(creditReportInfo?.clientRef).isEqualTo("CS-SED-655426-708782")
+        Truth.assertThat(creditReportInfo?.status).isEqualTo("MATCH")
+        Truth.assertThat(creditReportInfo?.maxScoreValue).isEqualTo(700.0)
+        Truth.assertThat(creditReportInfo?.minScoreValue).isEqualTo(0.0)
+        Truth.assertThat(creditReportInfo?.monthsSinceLastDefaulted).isEqualTo(-1.0)
+        Truth.assertThat(creditReportInfo?.hasEverDefaulted).isEqualTo(false)
+        Truth.assertThat(creditReportInfo?.monthsSinceLastDelinquent).isEqualTo(1.0)
+        Truth.assertThat(creditReportInfo?.hasEverBeenDelinquent).isEqualTo(true)
+        Truth.assertThat(creditReportInfo?.percentageCreditUsed).isEqualTo(44.0)
+        Truth.assertThat(creditReportInfo?.percentageCreditUsedDirectionFlag).isEqualTo(1.0)
+        Truth.assertThat(creditReportInfo?.changedScore).isEqualTo(0.0)
+        Truth.assertThat(creditReportInfo?.currentShortTermDebt).isEqualTo(13758.0)
+        Truth.assertThat(creditReportInfo?.currentShortTermNonPromotionalDebt).isEqualTo(13758.0)
+        Truth.assertThat(creditReportInfo?.currentShortTermCreditLimit).isEqualTo(30600.0)
+        Truth.assertThat(creditReportInfo?.currentShortTermCreditUtilisation).isEqualTo(44.0)
+        Truth.assertThat(creditReportInfo?.changeInShortTermDebt).isEqualTo(549.0)
+        Truth.assertThat(creditReportInfo?.currentLongTermDebt).isEqualTo(24682.0)
+        Truth.assertThat(creditReportInfo?.currentLongTermNonPromotionalDebt).isEqualTo(24682.0)
+        Truth.assertThat(creditReportInfo?.currentLongTermCreditLimit).isEqualTo(null)
+        Truth.assertThat(creditReportInfo?.currentLongTermCreditUtilisation).isEqualTo(null)
+        Truth.assertThat(creditReportInfo?.changeInLongTermDebt).isEqualTo(-327.0)
+        Truth.assertThat(creditReportInfo?.numPositiveScoreFactors).isEqualTo(9.0)
+        Truth.assertThat(creditReportInfo?.numNegativeScoreFactors).isEqualTo(0.0)
+        Truth.assertThat(creditReportInfo?.equifaxScoreBand).isEqualTo(4.0)
+        Truth.assertThat(creditReportInfo?.equifaxScoreBandDescription).isEqualTo("Excellent")
+        Truth.assertThat(creditReportInfo?.daysUntilNextReport).isEqualTo(9.0)
     }
 
     @Test(expected = HttpException::class)
     fun getScoreErrorTest() {
         runBlocking {
             mockNetworkResponseWithFileContent(
-                    "score200.json",
-                    HttpURLConnection.HTTP_BAD_REQUEST
+                "score200.json",
+                HttpURLConnection.HTTP_BAD_REQUEST
             )
             sut.getScore()
         }
