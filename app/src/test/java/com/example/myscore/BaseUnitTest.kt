@@ -32,11 +32,12 @@ open class BaseUnitTest {
     /**
      * Helps to read input file returns the respective data in mocked call
      */
-    fun mockNetworkResponseWithFileContent(fileName: String, responseCode: Int) = mMockServerInstance.enqueue(
-        MockResponse()
-            .setResponseCode(responseCode)
-            .setBody(getJson(fileName))
-    )
+    fun mockNetworkResponseWithFileContent(fileName: String, responseCode: Int) =
+        mMockServerInstance.enqueue(
+            MockResponse()
+                .setResponseCode(responseCode)
+                .setBody(getJson(fileName))
+        )
 
     /**
      * Reads input file and converts to json

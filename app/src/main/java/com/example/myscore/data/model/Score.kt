@@ -9,3 +9,4 @@ class Score {
     var augmentedCreditScore: String? = null
 }
 
+

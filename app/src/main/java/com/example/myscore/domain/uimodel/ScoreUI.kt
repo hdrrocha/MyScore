@@ -1,6 +1,6 @@
 package com.example.myscore.domain.uimodel
 
-data class ScoreUI (
+data class ScoreUI(
     val accountIDVStatus: String,
     val creditReportInfo: CreditReportInfoUI,
     val dashboardStatus: String,

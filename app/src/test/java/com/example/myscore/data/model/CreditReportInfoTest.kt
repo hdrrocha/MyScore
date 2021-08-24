@@ -2,11 +2,11 @@ package com.example.myscore.data.model
 
 import com.example.myscore.BaseUnitTest
 import com.google.common.truth.Truth
-import junit.framework.TestCase
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
+
 @RunWith(JUnit4::class)
 class CreditReportInfoTest : BaseUnitTest() {
     @Test
@@ -42,3 +42,4 @@ class CreditReportInfoTest : BaseUnitTest() {
         Truth.assertThat(model.daysUntilNextReport).isNull()
     }
 }
+

@@ -12,7 +12,7 @@ import org.junit.Test
 import retrofit2.HttpException
 import java.net.HttpURLConnection
 
-class GitHubApiTest : BaseUnitTest() {
+class ScoreApiTest : BaseUnitTest() {
     @get:Rule
     var instantExecutorRule = InstantTaskExecutorRule()
 
@@ -86,3 +86,4 @@ class GitHubApiTest : BaseUnitTest() {
         }
     }
 }
+

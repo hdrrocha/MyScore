@@ -3,10 +3,10 @@ package com.example.myscore.domain.mapper
 import com.example.myscore.data.model.CoachingSummary
 import com.example.myscore.data.model.CreditReportInfo
 import com.example.myscore.data.model.Score
+import com.example.myscore.domain.mapper.abs.ScoreMapperAbs
 import com.example.myscore.domain.uimodel.CoachingSummaryUI
 import com.example.myscore.domain.uimodel.CreditReportInfoUI
 import com.example.myscore.domain.uimodel.ScoreUI
-import com.example.myscore.domain.mapper.abs.ScoreMapperAbs
 
 class ScoreMapper : ScoreMapperAbs {
     override fun map(input: Score) = ScoreUI(
@@ -26,7 +26,6 @@ class ScoreMapper : ScoreMapperAbs {
             coachingSummary?.numberOfCompletedTodoItems ?: 0.0,
             coachingSummary?.selected ?: false
         )
-
     }
 
     private fun mapCreditReportInfo(creditReportInfo: CreditReportInfo?): CreditReportInfoUI {

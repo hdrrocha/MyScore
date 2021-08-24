@@ -7,3 +7,4 @@ class CoachingSummary {
     var numberOfCompletedTodoItems: Double? = null
     var selected: Boolean? = null
 }
+

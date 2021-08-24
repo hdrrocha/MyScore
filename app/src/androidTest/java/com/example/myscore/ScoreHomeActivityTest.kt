@@ -5,8 +5,7 @@ import androidx.test.espresso.ViewAssertion
 import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
-import androidx.test.espresso.matcher.ViewMatchers.*
-import androidx.test.ext.junit.rules.ActivityScenarioRule
+import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import com.example.myscore.ui.ScoreHomeActivity
@@ -20,7 +19,7 @@ class ScoreHomeActivityTest {
     val rule = ActivityTestRule(ScoreHomeActivity::class.java, true, true)
 
     @Test
-    fun  when_create_activity_it_should_display_loadingScore() {
+    fun when_create_activity_it_should_display_loadingScore() {
         try {
             Thread.sleep(2000)
             onView(withId(R.id.loadingScore)).isVisible()
@@ -31,7 +30,7 @@ class ScoreHomeActivityTest {
     }
 
     @Test
-    fun  when_end_loadingScoreactivity_it_should_display_progressScore() {
+    fun when_end_loadingScoreactivity_it_should_display_progressScore() {
         try {
             Thread.sleep(2000)
             onView(withId(R.id.loadingScore)).isVisible()

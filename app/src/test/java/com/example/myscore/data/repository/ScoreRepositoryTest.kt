@@ -23,7 +23,6 @@ class ScoreRepositoryTest {
         sut = ScoreRepository(mockApi)
     }
 
-
     @Test
     fun getScore() = runBlocking {
 

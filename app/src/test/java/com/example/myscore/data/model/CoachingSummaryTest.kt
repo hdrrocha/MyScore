@@ -19,3 +19,4 @@ class CoachingSummaryTest : BaseUnitTest() {
         Truth.assertThat(model.selected).isNull()
     }
 }
+

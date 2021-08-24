@@ -30,3 +30,4 @@ class CreditReportInfo {
     var equifaxScoreBandDescription: String? = null
     var daysUntilNextReport: Double? = null
 }
+

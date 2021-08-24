@@ -20,26 +20,25 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.*
 
-
 object Modules {
     private val network = module {
         single {
             Moshi.Builder()
-                    .add(Date::class.java, Rfc3339DateJsonAdapter().nullSafe())
-                    .build()
+                .add(Date::class.java, Rfc3339DateJsonAdapter().nullSafe())
+                .build()
         }
 
         single {
             Retrofit.Builder()
-                    .baseUrl(BuildConfig.BASE_URL)
-                    .addConverterFactory(MoshiConverterFactory.create(get()))
-                    .addCallAdapterFactory(CoroutineCallAdapterFactory.invoke())
-                    .client(
-                            OkHttpClient.Builder()
-                                    .addInterceptor(OkHttpProfilerInterceptor())
-                                    .build()
-                    )
-                    .build()
+                .baseUrl(BuildConfig.BASE_URL)
+                .addConverterFactory(MoshiConverterFactory.create(get()))
+                .addCallAdapterFactory(CoroutineCallAdapterFactory.invoke())
+                .client(
+                    OkHttpClient.Builder()
+                        .addInterceptor(OkHttpProfilerInterceptor())
+                        .build()
+                )
+                .build()
         }
     }
 
@@ -53,7 +52,7 @@ object Modules {
     private val repository = module {
         single<ScoreRepositoryAbs> {
             ScoreRepository(
-                    api = get()
+                api = get()
             )
         }
     }
@@ -78,6 +77,7 @@ object Modules {
             )
         }
     }
+
     var all = listOf(
         network,
         api,
