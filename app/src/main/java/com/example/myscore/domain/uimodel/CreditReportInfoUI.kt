@@ -2,11 +2,11 @@ package com.example.myscore.domain.uimodel
 
 
 data class CreditReportInfoUI (
-    val score: Double,
+    val score: Int,
     val scoreBand: Double,
     val clientRef: String,
     val status: String,
-    val maxScoreValue: Double,
+    val maxScoreValue: Int,
     val minScoreValue: Double,
     val monthsSinceLastDefaulted: Double,
     val hasEverDefaulted: Boolean,

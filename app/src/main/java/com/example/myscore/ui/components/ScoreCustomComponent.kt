@@ -17,6 +17,7 @@ class ScoreCustomComponent@JvmOverloads constructor(
         val inflater = LayoutInflater.from(context)
         inflater.inflate(R.layout.view_score_custom_component, this, true)
     }
+
     fun setScoreTitle(availableLimit: String?) {
         progress_bar_count.text = availableLimit
     }
@@ -24,7 +25,12 @@ class ScoreCustomComponent@JvmOverloads constructor(
     fun setMaxProgress(maxProgressValue: Int?) {
         progress_bar.max = maxProgressValue ?: 0
     }
+
     fun setProgress(progressValue: Int?) {
         progress_bar.progress = progressValue ?: 0
+    }
+
+    fun setProgressBarSubTitle(progressValue: String?) {
+        progress_bar_sub_title.text = context.getString(R.string.out_of )+" $progressValue"
     }
 }

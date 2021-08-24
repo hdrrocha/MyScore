@@ -30,6 +30,9 @@ class ScoreViewModel(
         it.score.toString()
     }
 
+    val scoreLimitTotalDescription: LiveData<String?> = Transformations.map(scoreLimit) {
+        it.maxScoreValue.toString()
+    }
     fun loadData() = viewModelScope.launch {
         loading.value = true
         error.value = false

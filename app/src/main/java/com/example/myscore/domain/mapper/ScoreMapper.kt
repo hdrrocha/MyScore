@@ -31,11 +31,11 @@ class ScoreMapper : ScoreMapperAbs {
 
     private fun mapCreditReportInfo(creditReportInfo: CreditReportInfo?): CreditReportInfoUI {
         return CreditReportInfoUI(
-            creditReportInfo?.score ?: 0.0,
+            creditReportInfo?.score?.toInt() ?: 0,
             creditReportInfo?.scoreBand ?: 0.0,
             creditReportInfo?.clientRef.orEmpty(),
             creditReportInfo?.status.orEmpty(),
-            creditReportInfo?.maxScoreValue ?: 0.0,
+            creditReportInfo?.maxScoreValue?.toInt() ?: 0,
             creditReportInfo?.minScoreValue ?: 0.0,
             creditReportInfo?.monthsSinceLastDefaulted ?: 0.0,
             creditReportInfo?.hasEverDefaulted ?: false,

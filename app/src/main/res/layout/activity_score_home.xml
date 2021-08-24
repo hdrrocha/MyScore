@@ -23,7 +23,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:setMaxProgress="@{viewModel.scoreLimitTotal}"
         app:setProgress="@{viewModel.scoreLimitAvailable}"
-        app:setScoreTitle="@{viewModel.scoreLimitAvailableDescription}" />
+        app:setScoreTitle="@{viewModel.scoreLimitAvailableDescription}"
+        app:setProgressBarSubTitle="@{viewModel.scoreLimitTotalDescription}" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -70,11 +70,11 @@ class ScoreMapperTest {
         }
 
         val creditReportInfoUI = CreditReportInfoUI(
-            score = 514.0,
+            score = 514,
             scoreBand = 4.0,
             clientRef = "CS-SED-655426-708782",
             status = "MATCH",
-            maxScoreValue = 700.0,
+            maxScoreValue = 700,
             minScoreValue = 0.0,
             monthsSinceLastDefaulted = -1.0,
             hasEverDefaulted = false,
