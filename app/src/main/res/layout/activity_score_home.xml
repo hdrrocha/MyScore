@@ -13,6 +13,7 @@
     tools:context=".ui.ScoreHomeActivity">
 
     <com.example.myscore.ui.components.CustomLoading
+        android:id="@+id/loadingScore"
         android:layout_width="@dimen/score_width"
         android:layout_height="@dimen/score_height"
         android:layout_marginTop="@dimen/spacing_xx_large"
