@@ -12,14 +12,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.ScoreHomeActivity">
 
-    <TextView
+    <com.example.myscore.ui.components.ScoreCustomComponent
+        android:id="@+id/progressScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:animateLayoutChanges="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:setMaxProgress="@{viewModel.scoreLimitTotal}"
+        app:setProgress="@{viewModel.scoreLimitAvailable}"
+        app:setScoreTitle="@{viewModel.scoreLimitAvailableDescription}" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
