@@ -31,6 +31,8 @@ Task board used to organize yourself during development:  https://github.com/hdr
         *  **JUnit 4.12**;
         *  **MockWebServer 4.1.0**;
 
+    *  Dependencies for UI testing:
+        *  **Espresso 3.4.0**;
 Thank you!
 
 
