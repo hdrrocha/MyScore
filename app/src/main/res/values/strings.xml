@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">MyScore</string>
+    <string name="your_credit_score_is">Your credit score is</string>
+    <string name="out_of">out of</string>
+    <string name="error_message">Sorry we have some problems, try in a moment! =\'(</string>
 </resources>

@@ -1,0 +1,43 @@
+{
+  "accountIDVStatus": "PASS",
+  "creditReportInfo": {
+    "score": 514.0,
+    "scoreBand": 4.0,
+    "clientRef": "CS-SED-655426-708782",
+    "status": "MATCH",
+    "maxScoreValue": 700.0,
+    "minScoreValue": 0.0,
+    "monthsSinceLastDefaulted": -1.0,
+    "hasEverDefaulted": false,
+    "monthsSinceLastDelinquent": 1.0,
+    "hasEverBeenDelinquent": true,
+    "percentageCreditUsed": 44.0,
+    "percentageCreditUsedDirectionFlag": 1.0,
+    "changedScore": 0.0,
+    "currentShortTermDebt": 13758.0,
+    "currentShortTermNonPromotionalDebt": 13758.0,
+    "currentShortTermCreditLimit": 30600.0,
+    "currentShortTermCreditUtilisation": 44.0,
+    "changeInShortTermDebt": 549.0,
+    "currentLongTermDebt": 24682.0,
+    "currentLongTermNonPromotionalDebt": 24682.0,
+    "currentLongTermCreditLimit": null,
+    "currentLongTermCreditUtilisation": null,
+    "changeInLongTermDebt": -327.0,
+    "numPositiveScoreFactors": 9.0,
+    "numNegativeScoreFactors": 0.0,
+    "equifaxScoreBand": 4.0,
+    "equifaxScoreBandDescription": "Excellent",
+    "daysUntilNextReport": 9.0
+  },
+  "dashboardStatus": "PASS",
+  "personaType": "INEXPERIENCED",
+  "coachingSummary": {
+    "activeTodo": false,
+    "activeChat": true,
+    "numberOfTodoItems": 0.0,
+    "numberOfCompletedTodoItems": 0.0,
+    "selected": true
+  },
+  "augmentedCreditScore": null
+}
