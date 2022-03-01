@@ -3,7 +3,7 @@
 
 # My Score
 
-If you want to take a look on screen of the App, it's here :
+If you want to take a look on the screen of the App, it's here :
 
  ![Screenshot_1](https://user-images.githubusercontent.com/18127700/130658475-7de98732-f1f9-461a-9814-c58ffb0f322f.png)
 
@@ -21,9 +21,9 @@ Task board used to organize yourself during development:  https://github.com/hdr
 *  IDE: **AndroidStudio 4.1.12**;
 *  **Gradle 4.0.1*;
 *  Some other technical information:
-    *  Usede **Koin 1.2.0**;
-    *  Usede **DataBinding 3.1.4**;
-    *  Usede **Coroutines**;
+    *  Used **Koin 1.2.0**;
+    *  Used **DataBinding 3.1.4**;
+    *  Used **Coroutines**;
     *  Dependências para API:
         *  **Retrofit 2.7.1**;
         *  **MoshiConverter 2.6.0**;
